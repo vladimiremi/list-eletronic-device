@@ -3,7 +3,18 @@ import { Text } from '../Text'
 import { Container, Field } from './styles'
 import Divider from '../Divider'
 
-export function ItemDevice() {
+interface IItemDevice {
+  name: string
+  serial: string
+  macAddress: string
+  type: string
+}
+
+interface DeviceProps {
+  data: IItemDevice
+}
+
+export function ItemDevice({ data }: DeviceProps) {
   const theme = useTheme()
   return (
     <Container>
@@ -12,7 +23,7 @@ export function ItemDevice() {
         fontSize={theme.FONT_SIZE.SM}
         color={theme.COLORS.WHITE}
       >
-        Câmera 1
+        {data.name}
       </Text>
       <Divider top={4} />
       <Field>
@@ -29,7 +40,7 @@ export function ItemDevice() {
           color={theme.COLORS.GRAY_100}
         >
           {' '}
-          123456789
+          {data.serial}
         </Text>
       </Field>
 
@@ -47,7 +58,7 @@ export function ItemDevice() {
           color={theme.COLORS.GRAY_100}
         >
           {' '}
-          00:11:22:33:44:55
+          {data.macAddress}
         </Text>
       </Field>
 
@@ -65,7 +76,7 @@ export function ItemDevice() {
           color={theme.COLORS.GRAY_100}
         >
           {' '}
-          Câmera
+          {data.type}
         </Text>
       </Field>
     </Container>
