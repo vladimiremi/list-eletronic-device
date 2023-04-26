@@ -15,7 +15,7 @@ export const Text = ({
   fontSize,
   fontFamily,
   color,
-  textAlign = 'center',
+  textAlign = 'left',
   ...rest
 }: IText) => {
   return (
