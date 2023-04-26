@@ -2,6 +2,7 @@
     "extends": "@rocketseat/eslint-config/react",
     "rules": {
       "no-unused-vars": "warn",
-      "eqeqeq": "warn"
+      "eqeqeq": "warn",
+      "camelcase": "warn"
     }
   }
