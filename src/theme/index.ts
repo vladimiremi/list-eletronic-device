@@ -34,4 +34,4 @@ export default {
     XL: 40,
     GIANT: 76,
   },
-};
+}
