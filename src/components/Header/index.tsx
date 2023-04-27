@@ -1,6 +1,7 @@
 import { useTheme } from 'styled-components/native'
 import { Text } from '../Text'
 import { Button, Container } from './styles'
+import { useNavigation } from '@react-navigation/native'
 
 interface HeaderProps {
   title: string
@@ -8,6 +9,8 @@ interface HeaderProps {
 
 export const Header = ({ title }: HeaderProps) => {
   const theme = useTheme()
+  const navigation = useNavigation()
+
   return (
     <Container>
       <Text
@@ -18,7 +21,7 @@ export const Header = ({ title }: HeaderProps) => {
         {title}
       </Text>
 
-      <Button>
+      <Button onPress={() => navigation.navigate('device/create')}>
         <Text
           fontFamily={theme.FONT_FAMILY.OVERPASS_REGULAR}
           fontSize={theme.FONT_SIZE.SM}
