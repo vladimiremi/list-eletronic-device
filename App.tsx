@@ -6,9 +6,9 @@ import {
   useFonts,
 } from '@expo-google-fonts/overpass'
 import { ThemeProvider } from 'styled-components/native'
-import { List } from './src/screens/List'
 import theme from './src/theme'
 import { StatusBar } from 'react-native'
+import { Routes } from './src/routes'
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -24,7 +24,7 @@ export default function App() {
         backgroundColor="transparent"
         translucent
       />
-      {fontsLoaded ? <List /> : false}
+      {fontsLoaded ? <Routes /> : false}
     </ThemeProvider>
   )
 }
